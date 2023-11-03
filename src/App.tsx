@@ -1,7 +1,10 @@
 function App() {
 
   return (
-    <h1>Hello</h1>
+    <div>
+      <h1>Hello</h1>
+      <p>Paragraph</p>
+    </div>
   )
 }
 
