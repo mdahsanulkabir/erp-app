@@ -1,0 +1,13 @@
+.appFooter{
+    background-color: rgb(63, 63, 11);
+    height: 36px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 100%;
+}
+
+.appFooter p {
+    font-weight: 700;
+    color: white;
+}

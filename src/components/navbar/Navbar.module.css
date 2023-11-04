@@ -1,0 +1,25 @@
+nav {
+    height: 3rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: olive;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    color: rgb(210, 216, 26);
+}
