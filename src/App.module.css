@@ -12,12 +12,13 @@ main {
     height: 100%;
 }
 
-main div {
-    /* min-height: 100%; */
+/* main div {
+    /* min-height: 100%; * /
     display: grid;
     place-content: center;
     border: 1px solid red;
-}
+} 
+*/
 
 footer {
     /* opacity: 0.5; */

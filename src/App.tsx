@@ -1,6 +1,7 @@
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
 import styles from './App.module.css'
+import Login from "./pages/login/Login"
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <div>
+        {/* <div>
           <p>slkfjalskjflaskdjfl</p>
           <p>slkfjalskjflaskdjfl</p>
           <p>slkfjalskjflaskdjfl</p>
@@ -63,7 +64,8 @@ function App() {
           <p>slkfjalskjflaskdjfl</p>
           <p>slkfjalskjflaskdjfl</p>
           <p>slkfjalskjflaskdjfl</p>
-        </div>
+        </div> */}
+        <Login />
       </main>
       <footer>
         <Footer />
