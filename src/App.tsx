@@ -1,76 +1,20 @@
-import Footer from "./components/footer/Footer"
-import Navbar from "./components/navbar/Navbar"
-import styles from './App.module.css'
-import Login from "./pages/login/Login"
+import { Route, Routes } from "react-router-dom";
+
+import Layout from "./components/layout/Layout"
+import Login from "./pages/login/Login";
+import CreateUser from "./pages/admin/createUser/CreateUser";
+import CreateDepartment from "./pages/admin/createDepartment/CreateDepartment";
 
 function App() {
 
   return (
-    <div className={styles.layout}>
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        {/* <div>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-          <p>slkfjalskjflaskdjfl</p>
-        </div> */}
-        <Login />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+        <Route path='login' element={<Login/>} />
+        <Route path='create-user' element={<CreateUser/>} />
+        <Route path='create-department' element={<CreateDepartment/>} />
+      </Route>
+    </Routes>
   )
 }
 
