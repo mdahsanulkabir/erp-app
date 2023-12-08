@@ -1,4 +1,4 @@
-.createUser{
+.home{
     height: 100%;
     width: 100%;
     display: grid;
@@ -6,7 +6,7 @@
     /* border: 1px solid red; */
 }
 
-.createUser .formWrapper {
+.home .formWrapper {
     border: 1px solid #898989;
     padding: 1rem;
     width: 500px;
@@ -15,19 +15,18 @@
     transition: all 0.3s linear;
 }
 
-.createUser .formWrapper:hover {
+.home .formWrapper:hover {
     border: none;
     box-shadow: 3px 5px 20px #333;
 }
 
-.createUser form {
+.home form {
     /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
 }
 
-.createUser form input,
-.createUser form select {
+.home form input {
     margin-bottom: 1rem;
     height: 2rem;
     border-radius: 0.3rem;
@@ -35,11 +34,11 @@
     border-color: #898989;
 }
 
-.createUser form label {
+.home form label {
     margin-bottom: 2px;
 }
 
-.createUser .btn {
+.home .btn {
     background-color: powderblue;
     width: 40%;
     margin-inline: auto;
@@ -50,13 +49,13 @@
     transition: all 0.3s linear;
 }
 
-.createUser .btn:hover {
+.home .btn:hover {
     background-color: blue;
     color: white;
     box-shadow: 0px 5px 20px rgb(61, 61, 95);
 }
 
-.createUser form h1 {
+.home form h1 {
     color: #333;
     text-align: center;
 }
