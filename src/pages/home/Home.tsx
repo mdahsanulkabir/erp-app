@@ -15,6 +15,7 @@ const Home = () => {
                 <button className={styles.btn}><Link to='/create-role'>Create Role</Link></button>
                 <button className={styles.btn}><Link to='/create-department'>Create Department</Link></button>
                 <button className={styles.btn}><Link to='/create-user'>Create User</Link></button>
+                <button className={styles.btn}><Link to='/product-capacity-unit'>Create Capacity Unit</Link></button>
             </div>
         </section>
     );

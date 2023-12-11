@@ -9,6 +9,7 @@ import Home from "./pages/home/Home";
 import RequireAuth from "./components/other/RequireAuth";
 import LinkPage from "./components/other/LinkPage";
 import Unauthorized from "./components/other/Unauthorized";
+import ProductCapacityUnit from "./pages/admin/ProductCapacityUnit/ProductCapacityUnit";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='create-user' element={<CreateUser/>} />
           <Route path='create-department' element={<CreateDepartment/>} />
           <Route path='create-role' element={<CreateRole/>} />
+          <Route path='product-capacity-unit' element={<ProductCapacityUnit/>} />
         </Route>
         
       </Route>
