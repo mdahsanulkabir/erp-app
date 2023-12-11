@@ -33,8 +33,9 @@ export default function Login () {
             console.log(response)
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
+            const userName = response?.data?.userName;
             console.log({roles})
-            setAuth({userEmail: data.userEmail, password: data.password, accessToken, roles})
+            setAuth({ userEmail: data.userEmail, password: data.password, accessToken, roles, userName })
             console.log(accessToken)
             navigate(from, {replace: true});
         } catch (err) {

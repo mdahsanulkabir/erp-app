@@ -39,7 +39,7 @@
 }
 
 .home .btn {
-    background-color: powderblue;
+    background-color: rgb(7, 193, 97);
     width: 40%;
     margin-inline: auto;
     cursor: pointer;
@@ -55,7 +55,19 @@
     box-shadow: 0px 5px 20px rgb(61, 61, 95);
 }
 
+.home .btn a {
+    color: orangered;
+    font-weight: 700;
+}
+
 .home form h1 {
     color: #333;
     text-align: center;
+}
+
+.home .links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

@@ -2,6 +2,7 @@ import { createContext, useState,ReactNode } from "react";
 
 interface AuthInterface {
     userEmail: string;
+    userName: string;
     password: string;
     accessToken: string;
     roles: number[];
@@ -14,6 +15,7 @@ interface AuthContextType {
 
 const initialAuthState: AuthInterface = {
     userEmail: "",
+    userName: "",
     password: "",
     accessToken: "",
     roles: [],
