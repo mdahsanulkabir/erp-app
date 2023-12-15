@@ -1,22 +1,23 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './CreateDepartment.module.css';
-import axios from '../../../config/axios.js';
+import useAxiosPrivate from '../../../hooks/useAxiosPrivate';
 
 interface CreateDepartmentFormInput {
     departmentName: string;
 }
 
 const CreateDepartment = () => {
+    const axiosPrivate = useAxiosPrivate();
     const { register, handleSubmit,formState: { errors }, } = useForm<CreateDepartmentFormInput>()
 
     const onSubmit: SubmitHandler<CreateDepartmentFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axios.post('/department',
+            const response = await axiosPrivate.post('/department',
                 JSON.stringify(data),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                }
+                // {
+                //     headers: { 'Content-Type': 'application/json' },
+                // }
             )
             console.log(response?.data)
         } catch (err) {

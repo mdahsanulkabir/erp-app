@@ -12,10 +12,15 @@ const Home = () => {
                 <h1>This is home component</h1>
             </div>
             <div className={styles.links}>
-                <button className={styles.btn}><Link to='/create-role'>Create Role</Link></button>
-                <button className={styles.btn}><Link to='/create-department'>Create Department</Link></button>
-                <button className={styles.btn}><Link to='/create-user'>Create User</Link></button>
-                <button className={styles.btn}><Link to='/product-capacity-unit'>Create Capacity Unit</Link></button>
+                <Link to='/create-role'>Create Role</Link>
+                <Link to='/create-department'>Create Department</Link>
+                <Link to='/create-user'>Create User</Link>
+                <Link to='/product-capacity-unit'>Create Capacity Unit</Link>
+                <Link to='/product-variant'>Create Product Variant</Link>
+                <Link to='/product-series'>Create Product Series</Link>
+                <Link to='/product-source-category'>Create Product Source Category</Link>
+                <Link to='/product-base'>Create Product Base</Link>
+                <Link to='/product-sku'>Create SKU</Link>
             </div>
         </section>
     );

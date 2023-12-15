@@ -7,9 +7,15 @@ import CreateDepartment from "./pages/admin/createDepartment/CreateDepartment";
 import CreateRole from "./pages/admin/createRole/CreateRole";
 import Home from "./pages/home/Home";
 import RequireAuth from "./components/other/RequireAuth";
+import PersistLogin from "./components/other/PersistLogin";
 import LinkPage from "./components/other/LinkPage";
 import Unauthorized from "./components/other/Unauthorized";
-import ProductCapacityUnit from "./pages/admin/ProductCapacityUnit/ProductCapacityUnit";
+import ProductCapacityUnit from "./pages/admin/productCapacityUnit/ProductCapacityUnit";
+import ProductVariant from "./pages/admin/productVariant/ProductVariant";
+import ProductSeries from "./pages/admin/createProductSeries/ProductSeries";
+import ProductSourceCategory from "./pages/admin/createProductSourceCategory/ProductSourceCategory";
+import ProductBase from "./pages/admin/createProductBase/ProductBase";
+import Sku from "./pages/admin/sku/SKU";
 
 function App() {
 
@@ -20,12 +26,19 @@ function App() {
         <Route path='linkpage' element={<LinkPage/>} />
         <Route path='unauthorized' element={<Unauthorized/>} />
 
-        <Route element={<RequireAuth allowedRoles={[5001]}/>}>
-          <Route path='/' element={<Home/>} />
-          <Route path='create-user' element={<CreateUser/>} />
-          <Route path='create-department' element={<CreateDepartment/>} />
-          <Route path='create-role' element={<CreateRole/>} />
-          <Route path='product-capacity-unit' element={<ProductCapacityUnit/>} />
+        <Route element={<PersistLogin/>}>
+          <Route element={<RequireAuth allowedRoles={[5001]}/>}>
+            <Route path='/' element={<Home/>} />
+            <Route path='create-user' element={<CreateUser/>} />
+            <Route path='create-department' element={<CreateDepartment/>} />
+            <Route path='create-role' element={<CreateRole/>} />
+            <Route path='product-capacity-unit' element={<ProductCapacityUnit/>} />
+            <Route path='product-variant' element={<ProductVariant/>} />
+            <Route path='product-series' element={<ProductSeries/>} />
+            <Route path='product-source-category' element={<ProductSourceCategory/>} />
+            <Route path='product-base' element={<ProductBase/>} />
+            <Route path='product-sku' element={<Sku/>} />
+          </Route>
         </Route>
         
       </Route>

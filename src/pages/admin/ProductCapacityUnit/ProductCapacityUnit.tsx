@@ -1,22 +1,24 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './ProductCapacityUnit.module.css';
-import axios from '../../../config/axios.js';
+// import { axiosPrivate } from '../../../config/axios.js';
+import useAxiosPrivate from '../../../hooks/useAxiosPrivate';
 
 interface CreateProductCapacityUnitFormInput {
     productCapacityUnit: string;
 }
 
 const ProductCapacityUnit = () => {
+    const axiosPrivate = useAxiosPrivate();
     const { register, handleSubmit,formState: { errors }, } = useForm<CreateProductCapacityUnitFormInput>()
 
     const onSubmit: SubmitHandler<CreateProductCapacityUnitFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axios.post('/product/getProductCapacityUnit',
+            const response = await axiosPrivate.post('/product/createProductCapacityUnit',
                 JSON.stringify(data),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                }
+                // {
+                //     headers: { 'Content-Type': 'application/json' },
+                // }
             )
             console.log(response?.data)
         } catch (err) {

@@ -11,9 +11,11 @@ interface AuthInterface {
 interface AuthContextType {
     auth: AuthInterface;
     setAuth: React.Dispatch<React.SetStateAction<AuthInterface>>
+    persist: boolean;
+    setPersist: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const initialAuthState: AuthInterface = {
+export const initialAuthState: AuthInterface = {
     userEmail: "",
     userName: "",
     password: "",
@@ -24,16 +26,19 @@ const initialAuthState: AuthInterface = {
 const AuthContext = createContext<AuthContextType>({
     auth: initialAuthState,
     setAuth: () => {},
+    persist: false,
+    setPersist: () => {}
 });
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [auth, setAuth] = useState<AuthInterface>(initialAuthState);
+    const [persist, setPersist] = useState<boolean>(JSON.parse(localStorage.getItem("persist") ?? "false") || false);
 
     return (
-        <AuthContext.Provider value={{ auth, setAuth }}>
+        <AuthContext.Provider value={{ auth, setAuth, persist, setPersist }}>
             {children}
         </AuthContext.Provider>
     )
 }
 
-export default AuthContext
+export default AuthContext;

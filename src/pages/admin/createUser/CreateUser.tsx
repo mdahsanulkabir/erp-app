@@ -1,7 +1,9 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './CreateUser.module.css';
 import { CreateRoleFormInput as userRole } from '../createRole/CreateRole'
+// import { axiosPrivate } from '../../../config/axios';
 // import axios from '../../../config/axios.js';
+import useAxiosPrivate from '../../../hooks/useAxiosPrivate';
 
 interface CreateUserFormInput {
     userName: string;
@@ -20,21 +22,22 @@ interface CreateUserFormInput {
 
 const CreateUser = () => {
     const userRoles: userRole[] = [{id: 5001, roleName: 'admin'}]
+    const axiosPrivate = useAxiosPrivate();
     const { register, handleSubmit, formState: { errors }, } = useForm<CreateUserFormInput>()
 
     const onSubmit: SubmitHandler<CreateUserFormInput> = async (data) => {
         console.log(data)
-        // try {
-        //     const response = await axios.post('/register-user',
-        //         JSON.stringify(data),
-        //         {
-        //             headers: { 'Content-Type': 'application/json' },
-        //         }
-        //     )
-        //     console.log(response?.data)
-        // } catch (err) {
-        //     console.log(err)
-        // }
+        try {
+            const response = await axiosPrivate.post('/register-user',
+                JSON.stringify(data),
+                // {
+                //     headers: { 'Content-Type': 'application/json' },
+                // }
+            )
+            console.log(response?.data)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
