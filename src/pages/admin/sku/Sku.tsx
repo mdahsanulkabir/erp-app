@@ -95,8 +95,8 @@ const Sku = () => {
                             ))
                         }
                     </select>
-                    {errors.productVariantId?.type === "required" && (
-                        <p role="alert">Product Variant is required</p>
+                    {errors.seriesCategoryId?.type === "required" && (
+                        <p role="alert">Product Series is required</p>
                     )}
                     
                     <br />
@@ -104,14 +104,15 @@ const Sku = () => {
                         selectedProductBaseId && 
                             <>
                                 <label>Capacity</label>
-                                
                                 <div style={{height: '100%', display: 'flex', alignItems: 'center'}}>
                                     <input type='number' style={{width: '100px'}} {...register("productCapacity", { required: true })} />
                                     <p> Unit {productBases?.find(productBase => productBase.id === selectedProductBaseId)?.productCapacityUnit}</p>
                                 </div>
                             </>
                     }
-                    
+                    {errors.productCapacity?.type === "required" && (
+                        <p role="alert">Product Capacity is required</p>
+                    )}
                     
                     <input className={styles.btn} type="submit" />
                 </form>

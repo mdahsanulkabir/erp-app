@@ -15,7 +15,10 @@ import ProductVariant from "./pages/admin/productVariant/ProductVariant";
 import ProductSeries from "./pages/admin/createProductSeries/ProductSeries";
 import ProductSourceCategory from "./pages/admin/createProductSourceCategory/ProductSourceCategory";
 import ProductBase from "./pages/admin/createProductBase/ProductBase";
-import Sku from "./pages/admin/sku/SKU";
+import Sku from "./pages/admin/sku/Sku";
+import ShowUsers from "./pages/admin/showUsers/ShowUsers";
+import Rm from "./pages/rm/Rm";
+import ShowProductBase from './pages/productBase/ProductBase';
 
 function App() {
 
@@ -27,7 +30,7 @@ function App() {
         <Route path='unauthorized' element={<Unauthorized/>} />
 
         <Route element={<PersistLogin/>}>
-          <Route element={<RequireAuth allowedRoles={[5001]}/>}>
+          <Route element={<RequireAuth allowedRoles={[3001]}/>}>
             <Route path='/' element={<Home/>} />
             <Route path='create-user' element={<CreateUser/>} />
             <Route path='create-department' element={<CreateDepartment/>} />
@@ -38,6 +41,11 @@ function App() {
             <Route path='product-source-category' element={<ProductSourceCategory/>} />
             <Route path='product-base' element={<ProductBase/>} />
             <Route path='product-sku' element={<Sku/>} />
+            <Route path='users' element={<ShowUsers/>} />
+            <Route path='rms' element={<Rm/>} />
+            <Route path='productBases' element={<ShowProductBase/>} />
+
+
           </Route>
         </Route>
         

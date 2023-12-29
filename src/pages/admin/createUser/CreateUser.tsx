@@ -21,7 +21,7 @@ interface CreateUserFormInput {
 // }
 
 const CreateUser = () => {
-    const userRoles: userRole[] = [{id: 5001, roleName: 'admin'}]
+    const userRoles: userRole[] = [{id: 3001, roleName: 'admin'}]
     const axiosPrivate = useAxiosPrivate();
     const { register, handleSubmit, formState: { errors }, } = useForm<CreateUserFormInput>()
 
