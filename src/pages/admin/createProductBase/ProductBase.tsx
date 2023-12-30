@@ -11,7 +11,7 @@ interface CreateProductBaseFormInput {
 const ProductBase = () => {
     const axiosPrivate = useAxiosPrivate();
     const capacityUnits = useGetProductCapacityUnit();
-    console.log(capacityUnits)
+    // console.log(capacityUnits)
     const { register, handleSubmit, formState: { errors }, } = useForm<CreateProductBaseFormInput>()
 
     const onSubmit: SubmitHandler<CreateProductBaseFormInput> = async (data) => {

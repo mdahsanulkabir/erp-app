@@ -19,6 +19,8 @@ import Sku from "./pages/admin/sku/Sku";
 import ShowUsers from "./pages/admin/showUsers/ShowUsers";
 import Rm from "./pages/rm/Rm";
 import ShowProductBase from './pages/productBase/ProductBase';
+import ShowProductSourceCategory from "./pages/productSourceCategory/ProductSourceCategory";
+import Skus from "./pages/skus/Skus";
 
 function App() {
 
@@ -44,8 +46,8 @@ function App() {
             <Route path='users' element={<ShowUsers/>} />
             <Route path='rms' element={<Rm/>} />
             <Route path='productBases' element={<ShowProductBase/>} />
-
-
+            <Route path='productCategory' element={<ShowProductSourceCategory/>} />
+            <Route path='sku' element={<Skus/>} />
           </Route>
         </Route>
         

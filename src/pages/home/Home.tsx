@@ -21,6 +21,11 @@ const Home = () => {
                 <Link to='/product-source-category'>Create Product Source Category</Link>
                 <Link to='/product-base'>Create Product Base</Link>
                 <Link to='/product-sku'>Create SKU</Link>
+                <Link to='/users'>Users List</Link>
+                <Link to='/rms'>All RMs</Link>
+                <Link to='/productBases'>All Product Bases</Link>
+                <Link to='/productCategory'>All Product Categories</Link>
+                <Link to='/sku'>All SKUs</Link>
             </div>
         </section>
     );

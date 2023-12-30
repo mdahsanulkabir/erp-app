@@ -7,8 +7,6 @@ import { ColDef,
     // ValueFormatterParams 
 } from 'ag-grid-community';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
-import Modal from '../../utils/modal/Modal';
-import ProductBaseAdmin from "../admin/createProductBase/ProductBase";
 
 // // Custom Cell Renderer (Display logos based on cell value)
 // const CompanyLogoRenderer = (params: ICellRendererParams) => (
@@ -44,28 +42,43 @@ import ProductBaseAdmin from "../admin/createProductBase/ProductBase";
 
 // Row Data Interface
 interface IRow {
-    baseProduct: string;
     id: string;
-    productCapacityUnit: string;
-    productCapacityUnitId: string;
+    sourceCategory: string;
+    productBaseId: string;
+    createdAt: Date;
+    updatedAt: Date;
+    updateReason: string;
+    comment: string;
+    productBase: {
+      id: string;
+      baseProduct: string;
+      comment:string;
+      createdAt: Date;
+      updatedAt: Date;
+      updateReason: string;
+      productCapacityUnitId: string;
+    }
+
 }
 
-const ProductBase = () => {
+const ShowProductSourceCategory = () => {
     const [rowData, setRowData] = useState<IRow[]>([]);
     const axiosPrivate = useAxiosPrivate();
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/productBase');
+                const response = await axiosPrivate.get('/product/productSourceCategory');
                 console.log(response?.data);
-                const productBases = response?.data?.map((productBase: IRow) => ({
-                  baseProduct: productBase.baseProduct,
+                const productSourceCategories = response?.data?.map((productBase: IRow) => ({
                   id: productBase.id,
-                  productCapacityUnit: productBase.productCapacityUnit,
-                  productCapacityUnitId: productBase.productCapacityUnitId
+                  sourceCategory: productBase.sourceCategory,
+                  comment: productBase.comment,
+                  createdAt: productBase.createdAt,
+                  productCapacityUnitId: productBase.productBase.productCapacityUnitId,
+                  baseProduct: productBase.productBase.baseProduct
                 }))
-                console.log(productBases)
-                setRowData(productBases);
+                console.log(productSourceCategories)
+                setRowData(productSourceCategories);
 
             } catch (err) {
                 console.log(err);
@@ -79,12 +92,12 @@ const ProductBase = () => {
   // Column Definitions: Defines & controls grid columns.
   const [colDefs] = useState<ColDef[]>([
     {
-      field: "baseProduct", 
+      field: "sourceCategory", 
       width: 200,
       checkboxSelection: true
     },
     {
-      field: "productCapacityUnit", 
+      field: "baseProduct", 
       width: 250,
     //   cellRenderer: CompanyLogoRenderer 
     }
@@ -100,40 +113,25 @@ const ProductBase = () => {
     };
   }, []);
 
-  const handleAddNew = () => {
-    alert("Add New Item")
-  }
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
+  // Container: Defines the grid's theme & dimensions.
   return (
     <div style={{display: 'flex', height: '100%'}}>
         <div style={{width: '200px'}}>
-          <h1>Base Product</h1>
-          <button onClick={handleAddNew} style={{width: '100%'}}>Add New</button>
-          
-          <button onClick={toggleModal}>Open Overlay</button>
-          <Modal isOpen={isOpen} onClose={toggleModal}>
-            <ProductBaseAdmin />
-          </Modal>
-
+            <h1>Hello</h1>
         </div>
-        <div className={"ag-theme-quartz-dark"} style={{ width: '100%', height: '100%'}}>
-          <AgGridReact 
-              rowData={rowData}
-              columnDefs={colDefs}
-              defaultColDef={defaultColDef}
-              pagination={true}
-              rowSelection='multiple'
-              onSelectionChanged={() => console.log('Row Selected!')}
-              onCellValueChanged={event => console.log(`New Cell Value: ${event.value}`)}
-          />
+        <div className={"ag-theme-quartz-dark"} style={{ width: '100%', height: '100%', flex: 1 }}>
+            <AgGridReact 
+                rowData={rowData}
+                columnDefs={colDefs}
+                defaultColDef={defaultColDef}
+                pagination={true}
+                rowSelection='multiple'
+                onSelectionChanged={() => console.log('Row Selected!')}
+                onCellValueChanged={event => console.log(`New Cell Value: ${event.value}`)}
+            />
         </div>
     </div>
   );
 };
 
-export default ProductBase;
+export default ShowProductSourceCategory;
