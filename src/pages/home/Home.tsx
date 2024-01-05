@@ -26,6 +26,7 @@ const Home = () => {
                 <Link to='/productBases'>All Product Bases</Link>
                 <Link to='/productCategory'>All Product Categories</Link>
                 <Link to='/sku'>All SKUs</Link>
+                <Link to='/fixed-mrp-bom'>Fixed MRP BOM</Link>
             </div>
         </section>
     );

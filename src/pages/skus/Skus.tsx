@@ -41,7 +41,7 @@ import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 // };
 
 // Row Data Interface
-interface IRow {
+export interface IRow {
     skuId: string
     skuCode: string;
     skuSAPCode: string;
