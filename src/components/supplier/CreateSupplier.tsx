@@ -1,11 +1,18 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import styles from './CreateSupplier.module.css';
+import { useEffect, useState } from 'react';
 
 interface ICreateSupplier {
     supplierName: string;
     supplierAlternateName: string;
     country: string;
+    rmSourceId: string;
+}
+
+interface IRmSourceLoaded {
+    id: string;
+    rmSource: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -31,6 +38,8 @@ const CreateSupplier = ({rowData, setRowData}: any) => {
                         supplierName: response.data.newSupplier.supplierName,
                         supplierAlternateName: response.data.newSupplier.supplierAlternateName,
                         country: response.data.newSupplier.country,
+                        rmSourceId: response.data.newSupplier.rmSourceId,
+                        rmSource: response.data.newSupplier.RmSource.rmSource
                     }
                 ])
             }
@@ -38,6 +47,27 @@ const CreateSupplier = ({rowData, setRowData}: any) => {
             console.log(err)
         }
     }
+    const [rmSources, setRmSources] = useState<IRmSourceLoaded[]>([]);
+    useEffect( () => {
+        const fetchData = async () => {
+            try {
+                const response = await axiosPrivate.get('/rm/rmSource');
+                console.log(response?.data);
+                const allRmSource = response?.data?.map((rmSource: IRmSourceLoaded) => ({
+                    rmSourceId: rmSource.id,
+                    rmSource: rmSource.rmSource,
+                }))
+                console.log(allRmSource)
+                setRmSources(allRmSource);
+
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+        
+    }, [axiosPrivate])
     return (
         <section className={styles.createSupplier}>
             <div className={styles.formWrapper}>
@@ -60,8 +90,22 @@ const CreateSupplier = ({rowData, setRowData}: any) => {
                     {errors.country?.type === "required" && (
                         <p role="alert">Supplier country is required</p>
                     )}
-                    {/* <label>Password</label>
-                    <input {...register("password", {required : true})} /> */}
+                    
+                    {/* Selection of Rm Sources */}
+                    <label>Set Rm Source Type</label>
+                    <select id="rmSource-select" {...register("rmSourceId", { required: true })}>
+                        <option value="">--Please choose a Supplier--</option>
+                        {
+                            rmSources?.map(rmSource => (
+                                <option key={rmSource.id} value={rmSource.id}>
+                                    {rmSource.rmSource}
+                                </option>
+                            ))
+                        }
+                    </select>
+                    {errors.rmSourceId?.type === "required" && (
+                        <p role="alert">RM source type is required</p>
+                    )}
                     <input className={styles.btn} type="submit" />
                 </form>
             </div>

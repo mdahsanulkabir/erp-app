@@ -15,6 +15,10 @@ interface IRow {
     supplierName: string;
     supplierAlternateName: string;
     country: string;
+    rmSourceId: string;
+    RmSource: {
+        rmSource: string;
+    }
 }
 
 const SupplierList = () => {
@@ -31,6 +35,8 @@ const SupplierList = () => {
                     supplierName: supplier.supplierName,
                     supplierAlternateName: supplier.supplierAlternateName,
                     country: supplier.country,
+                    rmSourceId: supplier.rmSourceId,
+                    rmSource: supplier.RmSource.rmSource
                 }))
                 console.log(suppliers)
                 setRowData(suppliers);
@@ -67,6 +73,11 @@ const SupplierList = () => {
         },
         {
           field: "country", 
+          width: 150,
+        //   cellRenderer: CompanyLogoRenderer 
+        },
+        {
+          field: "rmSource", 
           width: 150,
         //   cellRenderer: CompanyLogoRenderer 
         },
