@@ -8,32 +8,38 @@ import { ColDef,
 } from 'ag-grid-community';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import Modal from '../../utils/modal/Modal';
-import CreateSupplier from '../../components/supplier/CreateSupplier';
+import CreateExternalContact from '../../components/supplier/CreateExternalContact';
 
 interface IRow {
-    sl: number;
-    supplierName: string;
-    supplierAlternateName: string;
-    country: string;
+    sl?: number;
+    name: string;
+    email: string;
+    phone: string;
+    Supplier: {
+        supplierName: string;
+    }
+    supplierId: string;
 }
 
-const SupplierList = () => {
+const ExternalContact = () => {
     const [rowData, setRowData] = useState<IRow[]>([]);
     const axiosPrivate = useAxiosPrivate();
 
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/supplier/list');
+                const response = await axiosPrivate.get('/supplier/contact');
                 console.log(response?.data);
-                const suppliers = response?.data?.map((supplier: IRow, index:number) => ({
+                const extContacts = response?.data?.map((extContact: IRow, index:number) => ({
                     sl: index+1,
-                    supplierName: supplier.supplierName,
-                    supplierAlternateName: supplier.supplierAlternateName,
-                    country: supplier.country,
+                    name: extContact.name,
+                    email: extContact.email,
+                    phone: extContact.phone,
+                    supplierName: extContact.Supplier.supplierName,
+                    supplierId: extContact.supplierId,
                 }))
-                console.log(suppliers)
-                setRowData(suppliers);
+                console.log(extContacts)
+                setRowData(extContacts);
 
             } catch (err) {
                 console.log(err);
@@ -56,18 +62,23 @@ const SupplierList = () => {
         // //   cellRenderer: CompanyLogoRenderer 
         // },
         {
-          field: "supplierName", 
-          width: 400,
+          field: "name", 
+          width: 300,
         //   cellRenderer: CompanyLogoRenderer 
         },
         {
-          field: "supplierAlternateName", 
+          field: "email", 
           width: 200,
         //   cellRenderer: CompanyLogoRenderer 
         },
         {
-          field: "country", 
+          field: "phone", 
           width: 150,
+        //   cellRenderer: CompanyLogoRenderer 
+        },
+        {
+          field: "supplierName", 
+          width: 350,
         //   cellRenderer: CompanyLogoRenderer 
         },
     ]);
@@ -89,11 +100,11 @@ const SupplierList = () => {
     return (
         <div style={{display: 'flex', height: '100%'}}>
         <div style={{width: '200px'}}>
-            <h1>Supplier List</h1>
+            <h1>External Contacts</h1>
             <br />
-            <button onClick={toggleModal}>Add Supplier</button>
+            <button onClick={toggleModal}>Add External Contact</button>
             <Modal isOpen={isOpen} onClose={toggleModal}>
-                <CreateSupplier rowData={rowData} setRowData={setRowData}/>
+                <CreateExternalContact rowData={rowData} setRowData={setRowData}/>
             </Modal>
         </div>
         <div className={"ag-theme-quartz-dark"} style={{ width: '100%', height: '100%', flex: 1 }}>
@@ -111,4 +122,4 @@ const SupplierList = () => {
     )
 }
 
-export default SupplierList;
+export default ExternalContact;

@@ -23,6 +23,7 @@ import ShowProductSourceCategory from "./pages/productSourceCategory/ProductSour
 import Skus from "./pages/skus/Skus";
 import MRPBOMFixed from "./pages/mrpBomFixed/MRPBOMFixed";
 import SupplierList from "./pages/supplier/SupplierList";
+import ExternalContact from "./pages/supplier/ExternalContact";
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
             <Route path='sku' element={<Skus/>} />
             <Route path='fixed-mrp-bom' element={<MRPBOMFixed/>} />
             <Route path='supplier-list' element={<SupplierList/>} />
+            <Route path='supplier-contact' element={<ExternalContact/>} />
           </Route>
         </Route>
         

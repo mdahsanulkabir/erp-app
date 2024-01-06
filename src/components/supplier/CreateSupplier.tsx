@@ -9,7 +9,7 @@ interface ICreateSupplier {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CreateDepartment = ({rowData, setRowData}: any) => {
+const CreateSupplier = ({rowData, setRowData}: any) => {
     const axiosPrivate = useAxiosPrivate();
     const { register, handleSubmit,formState: { errors }, } = useForm<ICreateSupplier>()
 
@@ -69,4 +69,4 @@ const CreateDepartment = ({rowData, setRowData}: any) => {
     );
 };
 
-export default CreateDepartment;
+export default CreateSupplier;
