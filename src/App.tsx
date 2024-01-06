@@ -22,6 +22,7 @@ import ShowProductBase from './pages/productBase/ProductBase';
 import ShowProductSourceCategory from "./pages/productSourceCategory/ProductSourceCategory";
 import Skus from "./pages/skus/Skus";
 import MRPBOMFixed from "./pages/mrpBomFixed/MRPBOMFixed";
+import SupplierList from "./pages/supplier/SupplierList";
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
             <Route path='productCategory' element={<ShowProductSourceCategory/>} />
             <Route path='sku' element={<Skus/>} />
             <Route path='fixed-mrp-bom' element={<MRPBOMFixed/>} />
+            <Route path='supplier-list' element={<SupplierList/>} />
           </Route>
         </Route>
         
