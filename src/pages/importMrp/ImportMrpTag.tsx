@@ -8,38 +8,29 @@ import { ColDef,
 } from 'ag-grid-community';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
 import Modal from '../../utils/modal/Modal';
-import CreateSupplier from '../../components/supplier/CreateSupplier';
+import CreateImportRmRequirementTag from '../../components/mrp/CreateImportRmRequirementTag';
 
 interface IRow {
     sl: number;
-    supplierName: string;
-    supplierAlternateName: string;
-    country: string;
-    rmSourceId: string;
-    RmSource: {
-        rmSource: string;
-    }
+    importRmRequirementTag: string;
 }
 
-const SupplierList = () => {
+
+const ImportMrpTag = () => {
     const [rowData, setRowData] = useState<IRow[]>([]);
     const axiosPrivate = useAxiosPrivate();
 
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/supplier/list');
+                const response = await axiosPrivate.get('/mrpImport/tag');
                 console.log(response?.data);
-                const suppliers = response?.data?.map((supplier: IRow, index:number) => ({
+                const tags = response?.data?.map((tag: IRow, index:number) => ({
                     sl: index+1,
-                    supplierName: supplier.supplierName,
-                    supplierAlternateName: supplier.supplierAlternateName,
-                    country: supplier.country,
-                    rmSourceId: supplier.rmSourceId,
-                    rmSource: supplier.RmSource.rmSource
+                    importRmRequirementTag: tag.importRmRequirementTag,
                 }))
-                console.log(suppliers)
-                setRowData(suppliers);
+                console.log(tags)
+                setRowData(tags);
 
             } catch (err) {
                 console.log(err);
@@ -62,23 +53,8 @@ const SupplierList = () => {
         // //   cellRenderer: CompanyLogoRenderer 
         // },
         {
-          field: "supplierName", 
+          field: "importRmRequirementTag", 
           width: 400,
-        //   cellRenderer: CompanyLogoRenderer 
-        },
-        {
-          field: "supplierAlternateName", 
-          width: 200,
-        //   cellRenderer: CompanyLogoRenderer 
-        },
-        {
-          field: "country", 
-          width: 150,
-        //   cellRenderer: CompanyLogoRenderer 
-        },
-        {
-          field: "rmSource", 
-          width: 150,
         //   cellRenderer: CompanyLogoRenderer 
         },
     ]);
@@ -100,11 +76,11 @@ const SupplierList = () => {
     return (
         <div style={{display: 'flex', height: '100%'}}>
             <div style={{width: '200px'}}>
-                <h1>Supplier List</h1>
+                <h1>Import MRP Requirement Tag List</h1>
                 <br />
-                <button onClick={toggleModal}>Add Supplier</button>
+                <button onClick={toggleModal}>Add Tag</button>
                 <Modal isOpen={isOpen} onClose={toggleModal}>
-                    <CreateSupplier rowData={rowData} setRowData={setRowData}/>
+                    <CreateImportRmRequirementTag rowData={rowData} setRowData={setRowData}/>
                 </Modal>
             </div>
             <div className={"ag-theme-quartz-dark"} style={{ width: '100%', height: '100%', flex: 1 }}>
@@ -120,6 +96,6 @@ const SupplierList = () => {
             </div>
         </div>
     )
-}
+};
 
-export default SupplierList;
+export default ImportMrpTag;

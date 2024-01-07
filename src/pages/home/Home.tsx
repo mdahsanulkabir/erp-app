@@ -29,6 +29,8 @@ const Home = () => {
                 <Link to='/fixed-mrp-bom'>Fixed MRP BOM</Link>
                 <Link to='/supplier-list'>Supplier List</Link>
                 <Link to='/supplier-contact'>Supplier Contact</Link>
+                <Link to='/supplier-rm'>Supplier RM</Link>
+                <Link to='/mrpImportTag'>Import MRP Tag</Link>
             </div>
         </section>
     );

@@ -24,6 +24,8 @@ import Skus from "./pages/skus/Skus";
 import MRPBOMFixed from "./pages/mrpBomFixed/MRPBOMFixed";
 import SupplierList from "./pages/supplier/SupplierList";
 import ExternalContact from "./pages/supplier/ExternalContact";
+import SupplierRmFromUpload from "./pages/supplier/SupplierRmFromUpload";
+import ImportMrpTag from "./pages/importMrp/ImportMrpTag";
 
 function App() {
 
@@ -54,6 +56,8 @@ function App() {
             <Route path='fixed-mrp-bom' element={<MRPBOMFixed/>} />
             <Route path='supplier-list' element={<SupplierList/>} />
             <Route path='supplier-contact' element={<ExternalContact/>} />
+            <Route path='supplier-rm' element={<SupplierRmFromUpload/>} />
+            <Route path='mrpImportTag' element={<ImportMrpTag/>} />
           </Route>
         </Route>
         

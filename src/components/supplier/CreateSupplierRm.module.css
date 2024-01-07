@@ -1,0 +1,61 @@
+.createSupplierRm{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-content: center;
+    /* border: 1px solid red; */
+}
+
+.createSupplierRm .formWrapper {
+    border: 1px solid #898989;
+    padding: 1rem;
+    width: 500px;
+    justify-self: center;
+    border-radius: 0.7rem;
+    transition: all 0.3s linear;
+}
+
+.createSupplierRm .formWrapper:hover {
+    border: none;
+    box-shadow: 3px 5px 20px #333;
+}
+
+.createSupplierRm form {
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+}
+
+.createSupplierRm form input {
+    margin-bottom: 1rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    padding-left: 10px;
+    border-color: #898989;
+}
+
+.createSupplierRm form label {
+    margin-bottom: 2px;
+}
+
+.createSupplierRm .btn {
+    background-color: powderblue;
+    width: 40%;
+    margin-inline: auto;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    transition: all 0.3s linear;
+}
+
+.createSupplierRm .btn:hover {
+    background-color: blue;
+    color: white;
+    box-shadow: 0px 5px 20px rgb(61, 61, 95);
+}
+
+.createSupplierRm form h1 {
+    color: #333;
+    text-align: center;
+}
