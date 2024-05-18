@@ -1,7 +1,7 @@
 const CreateSupplierRm = () => {
     return (
         <div>
-            
+            Hello
         </div>
     );
 };
