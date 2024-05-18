@@ -10,7 +10,6 @@ import RequireAuth from "./components/other/RequireAuth";
 import PersistLogin from "./components/other/PersistLogin";
 import LinkPage from "./components/other/LinkPage";
 import Unauthorized from "./components/other/Unauthorized";
-import ProductCapacityUnit from "./pages/admin/productCapacityUnit/ProductCapacityUnit";
 import ProductVariant from "./pages/admin/productVariant/ProductVariant";
 import ProductSeries from "./pages/admin/createProductSeries/ProductSeries";
 import ProductSourceCategory from "./pages/admin/createProductSourceCategory/ProductSourceCategory";
@@ -26,6 +25,7 @@ import SupplierList from "./pages/supplier/SupplierList";
 import ExternalContact from "./pages/supplier/ExternalContact";
 import SupplierRmFromUpload from "./pages/supplier/SupplierRmFromUpload";
 import ImportMrpTag from "./pages/importMrp/ImportMrpTag";
+import ProductCapacityUnit from "./pages/admin/productCapacityUnit/ProductCapacityUnit";
 
 function App() {
 
