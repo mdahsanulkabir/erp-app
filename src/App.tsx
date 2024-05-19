@@ -25,7 +25,7 @@ import SupplierList from "./pages/supplier/SupplierList";
 import ExternalContact from "./pages/supplier/ExternalContact";
 import SupplierRmFromUpload from "./pages/supplier/SupplierRmFromUpload";
 import ImportMrpTag from "./pages/importMrp/ImportMrpTag";
-import ProductCapacityUnit from "./pages/admin/productCapacityUnit/ProductCapacityUnit";
+import ProductCapacityUnit from "./pages/admin/ProductCapacityUnit/ProductCapacityUnit";
 
 function App() {
 

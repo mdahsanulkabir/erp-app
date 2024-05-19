@@ -1,6 +1,5 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import styles from './ProductCapacityUnit.module.css';
-// import { axiosPrivate } from '../../../config/axios.js';
 import useAxiosPrivate from '../../../hooks/useAxiosPrivate';
 
 interface CreateProductCapacityUnitFormInput {
