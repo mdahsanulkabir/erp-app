@@ -20,6 +20,7 @@ export default function Login () {
     const { register, handleSubmit,formState: { errors }, } = useForm<LoginFormInput>()
 
     const onSubmit: SubmitHandler<LoginFormInput> = async (data) => {
+        console.log(import.meta.env.MODE)
         console.log(data)
         try {
             const response = await axios.post('/login',
