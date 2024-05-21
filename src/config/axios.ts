@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-// const BASE_URL: string ='http://65.0.82.39:8000';
 const BASE_URL: string =import.meta.env.VITE_BASE_URL;
-// const BASE_URL: string ='http://localhost:8000';
 
 export default axios.create({
     baseURL: BASE_URL
