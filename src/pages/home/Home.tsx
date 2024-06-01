@@ -21,6 +21,8 @@ const Home = () => {
                 <Link to='/product-source-category'>Create Product Source Category</Link>
                 <Link to='/product-base'>Create Product Base</Link>
                 <Link to='/product-sku'>Create SKU</Link>
+                <Link to='/create-plant'>Create Plant</Link>
+                <Link to='/createPlantSkuAssociation'>Create Sku-plants</Link>
                 <Link to='/users'>Users List</Link>
                 <Link to='/rms'>All RMs</Link>
                 <Link to='/productBases'>All Product Bases</Link>
@@ -31,6 +33,9 @@ const Home = () => {
                 <Link to='/supplier-contact'>Supplier Contact</Link>
                 <Link to='/supplier-rm'>Supplier RM</Link>
                 <Link to='/mrpImportTag'>Import MRP Tag</Link>
+                <Link to='/show-plants'>Show Plants</Link>
+                <Link to='/plantSkuAssociation'>Plant SKU</Link>
+                <Link to='/showProduction'>Show Production</Link>
             </div>
         </section>
     );

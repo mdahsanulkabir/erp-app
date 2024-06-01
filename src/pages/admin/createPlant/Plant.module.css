@@ -1,17 +1,12 @@
-.home{
+.createPlant{
     height: 100%;
     width: 100%;
     display: grid;
     align-content: center;
     /* border: 1px solid red; */
-    color: black;
 }
 
-.home a {
-    color: black;
-}
-
-.home .formWrapper {
+.createPlant .formWrapper {
     border: 1px solid #898989;
     padding: 1rem;
     width: 500px;
@@ -20,23 +15,18 @@
     transition: all 0.3s linear;
 }
 
-.home .formWrapper:hover {
+.createPlant .formWrapper:hover {
     border: none;
     box-shadow: 3px 5px 20px #333;
 }
 
-.home .formWrapper h1 {
-    text-align: center;
-    color: orangered;
-}
-
-.home form {
+.createPlant form {
     /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
 }
 
-.home form input {
+.createPlant form input {
     margin-bottom: 1rem;
     height: 2rem;
     border-radius: 0.3rem;
@@ -44,12 +34,12 @@
     border-color: #898989;
 }
 
-.home form label {
+.createPlant form label {
     margin-bottom: 2px;
 }
 
-.home .btn {
-    background-color: rgb(7, 193, 97);
+.createPlant .btn {
+    background-color: powderblue;
     width: 40%;
     margin-inline: auto;
     cursor: pointer;
@@ -59,32 +49,13 @@
     transition: all 0.3s linear;
 }
 
-.home .btn:hover {
+.createPlant .btn:hover {
     background-color: blue;
     color: white;
     box-shadow: 0px 5px 20px rgb(61, 61, 95);
 }
 
-.home .btn a {
-    color: orangered;
-    font-weight: 700;
-}
-
-.home form h1 {
+.createPlant form h1 {
     color: #333;
     text-align: center;
-}
-
-.home .links {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-inline: 100px;
-    font-size: 20px;
-}
-
-.home .links>:hover {
-    background-color: coral;
-    font-weight: 700;
 }

@@ -26,6 +26,11 @@ import ExternalContact from "./pages/supplier/ExternalContact";
 import SupplierRmFromUpload from "./pages/supplier/SupplierRmFromUpload";
 import ImportMrpTag from "./pages/importMrp/ImportMrpTag";
 import ProductCapacityUnit from "./pages/admin/ProductCapacityUnit/ProductCapacityUnit";
+import Plant from "./pages/admin/createPlant/Plant";
+import ShowPlants from "./pages/showPlants/ShowPlants";
+import CreatePlantSkuAssociation from "./pages/admin/createPlantSkuAssociation/CreatePlantSkuAssociation";
+import ShowPlantSkuAssociation from "./pages/plantSkuAssociation/ShowPlantSkuAssociation";
+import ShowProduction from "./pages/showPoduction/ShowProduction";
 
 function App() {
 
@@ -58,6 +63,11 @@ function App() {
             <Route path='supplier-contact' element={<ExternalContact/>} />
             <Route path='supplier-rm' element={<SupplierRmFromUpload/>} />
             <Route path='mrpImportTag' element={<ImportMrpTag/>} />
+            <Route path='create-plant' element={<Plant/>} />
+            <Route path='show-plants' element={<ShowPlants/>} />
+            <Route path='createPlantSkuAssociation' element={<CreatePlantSkuAssociation/>} />
+            <Route path='plantSkuAssociation' element={<ShowPlantSkuAssociation/>} />
+            <Route path='showProduction' element={<ShowProduction/>} />
           </Route>
         </Route>
         
