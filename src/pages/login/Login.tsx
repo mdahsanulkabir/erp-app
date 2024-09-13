@@ -21,6 +21,7 @@ export default function Login () {
 
     const onSubmit: SubmitHandler<LoginFormInput> = async (data) => {
         console.log(import.meta.env.MODE)
+        console.log(import.meta.env.VITE_BASE_URL)
         console.log(data)
         try {
             const response = await axios.post('/api/login',
