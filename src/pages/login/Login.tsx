@@ -23,7 +23,7 @@ export default function Login () {
         console.log(import.meta.env.MODE)
         console.log(data)
         try {
-            const response = await axios.post('/login',
+            const response = await axios.post('/api/login',
                 JSON.stringify(data),
                 {
                     headers: { 'Content-Type': 'application/json' },
