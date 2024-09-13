@@ -13,7 +13,7 @@ const CreateDepartment = () => {
     const onSubmit: SubmitHandler<CreateDepartmentFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/department',
+            const response = await axiosPrivate.post('/api/department',
                 JSON.stringify(data),
                 // {
                 //     headers: { 'Content-Type': 'application/json' },

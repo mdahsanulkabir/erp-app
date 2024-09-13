@@ -23,7 +23,7 @@ const ImportMrpTag = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/mrpImport/tag');
+                const response = await axiosPrivate.get('/api/mrpImport/tag');
                 console.log(response?.data);
                 const tags = response?.data?.map((tag: IRow, index:number) => ({
                     sl: index+1,

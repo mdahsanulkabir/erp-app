@@ -96,7 +96,7 @@ const Rm = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/rm/rmDefinition');
+                const response = await axiosPrivate.get('/api/rm/rmDefinition');
                 console.log(response?.data);
                 const rms = response?.data?.map((rm: IRow) => ({
                     objectId: rm.objectId,

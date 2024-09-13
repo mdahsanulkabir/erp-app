@@ -122,7 +122,7 @@ const SupplierRmFromUpload = () => {
                 currencyId: rmData.currencyId
             }))
             console.log(someSupplierRm)
-            const response = await axiosPrivate.post('/supplierRm/createMany',
+            const response = await axiosPrivate.post('/api/supplierRm/createMany',
                 JSON.stringify(someSupplierRm),
             )
             console.log(response?.data)

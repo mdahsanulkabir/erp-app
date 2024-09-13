@@ -13,7 +13,7 @@ const ProductVariant = () => {
     const onSubmit: SubmitHandler<CreateProductVariantFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/product/productVariant',
+            const response = await axiosPrivate.post('/api/product/productVariant',
                 JSON.stringify(data),
             )
             console.log(response?.data)

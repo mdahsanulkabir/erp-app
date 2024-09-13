@@ -16,7 +16,7 @@ const ProductSourceCategory = () => {
     const onSubmit: SubmitHandler<CreateProductSourceCategoryFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/product/productSourceCategory',
+            const response = await axiosPrivate.post('/api/product/productSourceCategory',
                 JSON.stringify(data),
             )
             console.log(response?.data)

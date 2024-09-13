@@ -14,7 +14,7 @@ const useGetProductSeriesCategory = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/productSeries');
+                const response = await axiosPrivate.get('/api/product/productSeries');
                 // console.log(response?.data);
                 setProductSeriesCategories(response.data);
             } catch (err) {

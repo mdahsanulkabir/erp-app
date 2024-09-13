@@ -34,7 +34,7 @@ const Sku = () => {
     const onSubmit: SubmitHandler<CreateSKUFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/product/sku',
+            const response = await axiosPrivate.post('/api/product/sku',
                 JSON.stringify(data),
             )
             console.log(response?.data)

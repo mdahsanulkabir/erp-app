@@ -28,7 +28,7 @@ const ExternalContact = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/supplier/contact');
+                const response = await axiosPrivate.get('/api/supplier/contact');
                 console.log(response?.data);
                 const extContacts = response?.data?.map((extContact: IRow, index:number) => ({
                     sl: index+1,

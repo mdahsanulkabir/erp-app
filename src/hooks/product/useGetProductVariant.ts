@@ -14,7 +14,7 @@ const useGetProductVariant = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/productVariant');
+                const response = await axiosPrivate.get('/api/product/productVariant');
                 // console.log(response?.data);
                 setProductVariants(response.data);
             } catch (err) {

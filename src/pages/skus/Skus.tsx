@@ -69,7 +69,7 @@ const Skus = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/sku');
+                const response = await axiosPrivate.get('/api/product/sku');
                 console.log(response?.data);
                 const skus = response?.data?.map((sku: IRow) => ({
                   skuId: sku.skuId,

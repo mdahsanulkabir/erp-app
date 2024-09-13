@@ -14,7 +14,7 @@ const useGetProductCapacityUnit = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/getProductCapacityUnit');
+                const response = await axiosPrivate.get('/api/product/getProductCapacityUnit');
                 // console.log(response?.data);
                 setCapacityUnits(response.data);
             } catch (err) {

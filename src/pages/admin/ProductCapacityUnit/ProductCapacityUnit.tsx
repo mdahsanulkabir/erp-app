@@ -13,7 +13,7 @@ const ProductCapacityUnit = () => {
     const onSubmit: SubmitHandler<CreateProductCapacityUnitFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/product/createProductCapacityUnit',
+            const response = await axiosPrivate.post('/api/product/createProductCapacityUnit',
                 JSON.stringify(data),
                 // {
                 //     headers: { 'Content-Type': 'application/json' },

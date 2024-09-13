@@ -31,7 +31,7 @@ const CreateExternalContact = ({rowData, setRowData}: any) => {
     const onSubmit: SubmitHandler<ICreateExternalContact> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/supplier/contact',
+            const response = await axiosPrivate.post('/api/supplier/contact',
                 JSON.stringify(data),
                 // {
                 //     headers: { 'Content-Type': 'application/json' },
@@ -59,7 +59,7 @@ const CreateExternalContact = ({rowData, setRowData}: any) => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/supplier/list');
+                const response = await axiosPrivate.get('/api/supplier/list');
                 console.log(response?.data);
                 const allSuppliers = response?.data?.map((supplier: ISupplierLoaded) => ({
                     supplierId: supplier.id,

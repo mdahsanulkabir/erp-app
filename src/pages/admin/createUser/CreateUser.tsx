@@ -28,7 +28,7 @@ const CreateUser = () => {
     const onSubmit: SubmitHandler<CreateUserFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/register-user',
+            const response = await axiosPrivate.post('/api/register-user',
                 JSON.stringify(data),
                 // {
                 //     headers: { 'Content-Type': 'application/json' },

@@ -62,7 +62,7 @@ const ShowUsers = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/getUsers');
+                const response = await axiosPrivate.get('/api/getUsers');
                 console.log(response?.data);
                 const users = response?.data?.map((user: { userName: string; userSingerId: string; userArcelikId: number; userEmail: string; userDepartment: { departmentName: string; }; roles: { id: number; }[]; }) => ({
                     userName:user.userName,

@@ -17,7 +17,7 @@ const ProductBase = () => {
     const onSubmit: SubmitHandler<CreateProductBaseFormInput> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/product/productBase',
+            const response = await axiosPrivate.post('/api/product/productBase',
                 JSON.stringify(data),
             )
             console.log(response?.data)

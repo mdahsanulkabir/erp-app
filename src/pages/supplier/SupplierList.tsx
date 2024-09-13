@@ -28,7 +28,7 @@ const SupplierList = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/supplier/list');
+                const response = await axiosPrivate.get('/api/supplier/list');
                 console.log(response?.data);
                 const suppliers = response?.data?.map((supplier: IRow, index:number) => ({
                     sl: index+1,

@@ -23,7 +23,7 @@ const CreateSupplier = ({rowData, setRowData}: any) => {
     const onSubmit: SubmitHandler<ICreateSupplier> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/supplier/list',
+            const response = await axiosPrivate.post('/api/supplier/list',
                 JSON.stringify(data),
                 // {
                 //     headers: { 'Content-Type': 'application/json' },
@@ -51,7 +51,7 @@ const CreateSupplier = ({rowData, setRowData}: any) => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/rm/rmSource');
+                const response = await axiosPrivate.get('/api/rm/rmSource');
                 console.log(response?.data);
                 const allRmSource = response?.data?.map((rmSource: IRmSourceLoaded) => ({
                     rmSourceId: rmSource.id,

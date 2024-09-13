@@ -67,7 +67,7 @@ const ShowProductSourceCategory = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/productSourceCategory');
+                const response = await axiosPrivate.get('/api/product/productSourceCategory');
                 console.log(response?.data);
                 const productSourceCategories = response?.data?.map((productBase: IRow) => ({
                   id: productBase.id,

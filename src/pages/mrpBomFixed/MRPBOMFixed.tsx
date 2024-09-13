@@ -103,7 +103,7 @@ const MRPBOMFixed = () => {
                     quantity: rm.qty
                 }))]
             })
-            const response = await axiosPrivate.post('/fixedMRPBOM/mrpBom',
+            const response = await axiosPrivate.post('/api/fixedMRPBOM/mrpBom',
                 JSON.stringify({
                     ...formData,
                     rms: rowDataUploaded.map(rm => {
@@ -126,7 +126,7 @@ const MRPBOMFixed = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/sku');
+                const response = await axiosPrivate.get('/api/product/sku');
                 console.log("skus", response?.data);
                 setSkus(response.data);
             } catch (err) {

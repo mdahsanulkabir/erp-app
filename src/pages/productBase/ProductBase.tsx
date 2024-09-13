@@ -56,7 +56,7 @@ const ProductBase = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/productBase');
+                const response = await axiosPrivate.get('/api/product/productBase');
                 console.log(response?.data);
                 const productBases = response?.data?.map((productBase: IRow) => ({
                   baseProduct: productBase.baseProduct,

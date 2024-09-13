@@ -18,7 +18,7 @@ const CreateRole = () => {
     const onSubmit: SubmitHandler<CreateRoleFormInput> = async (data) => {
         console.log(data);
         try {
-            const response = await axiosPrivate.post('/role',
+            const response = await axiosPrivate.post('/api/role',
                 JSON.stringify(data),
                 // {
                 //     headers: {

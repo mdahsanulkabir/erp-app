@@ -15,7 +15,7 @@ const CreateImportRmRequirementTag = ({rowData, setRowData}: any) => {
     const onSubmit: SubmitHandler<IImportRmRequirementTag> = async (data) => {
         console.log(data)
         try {
-            const response = await axiosPrivate.post('/mrpImport/tag',
+            const response = await axiosPrivate.post('/api/mrpImport/tag',
                 JSON.stringify(data),
                 // {
                 //     headers: { 'Content-Type': 'application/json' },

@@ -16,7 +16,7 @@ const useGetProductBase = () => {
     useEffect( () => {
         const fetchData = async () => {
             try {
-                const response = await axiosPrivate.get('/product/productBase');
+                const response = await axiosPrivate.get('/api/product/productBase');
                 // console.log(response?.data);
                 setProductBases(response.data);
             } catch (err) {
